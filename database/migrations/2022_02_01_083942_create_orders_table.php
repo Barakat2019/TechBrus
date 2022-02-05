@@ -23,6 +23,7 @@ class CreateOrdersTable extends Migration
             $table->string('transaction_method', 255);
             $table->string('transaction_type', 255);
             $table->tinyInteger('post_status');
+            $table->tinyInteger('refund_method');
             $table->tinyInteger('refund_type');
             $table->string('payer_id');
             $table->decimal('shipping_fee', 10, 2);
