@@ -17,7 +17,7 @@ class OrderDataTest extends Controller
 
     public function get_customer_id()
     {
-        return $transaction = DB::connection('mysql')->table('wphpm_postmeta')->where('meta_key', '_transaction_id')->get();
+          $transaction = DB::connection('mysql')->table('wphpm_postmeta')->where('meta_key', '_transaction_id')->get();
         $customer_id = DB::connection('mysql')->table('wphpm_postmeta')->where('meta_key', '_customer_user')->get();
     }
 }
