@@ -20,5 +20,8 @@ class OrderDataTest extends Controller
         $transaction = DB::connection('mysql')->table('wphpm_postmeta')->where('meta_key', '_transaction_id')->get();
         $paymentMethod = DB::connection('mysql')->table('wphpm_postmeta')->where('meta_key', '_payment_method')->get();
         $customer_id = DB::connection('mysql')->table('wphpm_postmeta')->where('meta_key', '_customer_user')->get();
+
+           $refund_method = DB::connection('mysql')->table('wphpm_postmeta')->where('meta_key', '_refund_method')->get();
+        $refund_reason = DB::connection('mysql')->table('wphpm_postmeta')->where('meta_key', '_refund_reason')->get();
     }
 }
