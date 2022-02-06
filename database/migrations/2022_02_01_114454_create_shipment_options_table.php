@@ -16,7 +16,7 @@ class CreateShipmentOptionsTable extends Migration
         Schema::create('shipment_options', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name', 255);
-          $table->unsignedBigInteger('shipment_type', 4);
+            $table->tinyInteger('shipment_type');
             $table->string('distribution', 255);
             $table->text('description');
             $table->string('shipping_duration', 255);

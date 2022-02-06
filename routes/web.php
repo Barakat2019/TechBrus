@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\OrderDataTest;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +21,8 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+
+Route::get('orders',[OrderDataTest::class,'get_data']);
+Route::get('customer_id',[OrderDataTest::class,'get_customer_id']);
+
