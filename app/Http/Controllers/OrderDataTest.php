@@ -9,9 +9,10 @@ class OrderDataTest extends Controller
 {
     public function get_data()
     {
-        $order_id = DB::connection('mysql')->table('wphpm_posts')->pluck('id');
+        $order_id = DB::connection('mysql')->table('wphpm_posts')->get();
+
         foreach ($order_id as $order) {
-            return $order->ID;
+            echo  $order->ID . $order->post_author;
         }
     }
 
@@ -21,7 +22,7 @@ class OrderDataTest extends Controller
         $paymentMethod = DB::connection('mysql')->table('wphpm_postmeta')->where('meta_key', '_payment_method')->get();
         $customer_id = DB::connection('mysql')->table('wphpm_postmeta')->where('meta_key', '_customer_user')->get();
 
-           $refund_method = DB::connection('mysql')->table('wphpm_postmeta')->where('meta_key', '_refund_method')->get();
+        $refund_method = DB::connection('mysql')->table('wphpm_postmeta')->where('meta_key', '_refund_method')->get();
         $refund_reason = DB::connection('mysql')->table('wphpm_postmeta')->where('meta_key', '_refund_reason')->get();
     }
 }
